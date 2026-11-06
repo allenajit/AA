@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html.dark {
+    color-scheme: dark;
+    background-color: #070709;
+  }
+
+  html.light {
+    color-scheme: light;
+    background-color: #fafafa;
+  }
+
+  body {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background: #0d0d11;
+  }
+
+  .light ::-webkit-scrollbar-track {
+    background: #f4f4f5;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: #272734;
+    border-radius: 9999px;
+  }
+
+  .light ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d4ff00;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 24px rgba(212, 255, 0, 0.45);
+  }
+  
+  .border-glow {
+    box-shadow: 0 0 15px -3px rgba(212, 255, 0, 0.25);
+  }
+
+  .bg-grid-dark {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }
+
+  .bg-grid-light {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  }
+
+  .bg-radial-gradient-dark {
+    background: radial-gradient(circle at 50% 0%, rgba(212, 255, 0, 0.07) 0%, transparent 70%);
+  }
+
+  .bg-radial-gradient-light {
+    background: radial-gradient(circle at 50% 0%, rgba(132, 204, 22, 0.08) 0%, transparent 70%);
+  }
+}
